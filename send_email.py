@@ -10,7 +10,7 @@ def send_email(receiver, message):
     context = ssl.create_default_context()
     #message1 = "hi, how are you"
     message_to_send = f'''Subject: A plain text email
-   ''' + message
+{message} '''
 
     with smtplib.SMTP_SSL(host, port, context=context) as server:
         server.login(username, password)
